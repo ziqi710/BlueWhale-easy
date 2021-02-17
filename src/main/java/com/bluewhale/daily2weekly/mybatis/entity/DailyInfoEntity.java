@@ -2,6 +2,9 @@ package com.bluewhale.daily2weekly.mybatis.entity;
 
 import java.util.Date;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
+
 /**
  * 日报信息表
  * @author 张晓睿
@@ -9,24 +12,33 @@ import java.util.Date;
  */
 public class DailyInfoEntity {
 
-	//任务序号
+	@ExcelIgnore
+	private String id;
+	@ExcelIgnore
+	private int empNo;
+	@ExcelIgnore
+    private String empName;
+	@ExcelProperty("序号")
 	private Integer taskSeq;
-	//需求号或bug号
+	@ExcelProperty("任务来源")
+	private String taskSource;
+	@ExcelProperty("需求号或BUG号")
 	private String taskId;
-	//bug分类
+	@ExcelProperty("BUG分类")
 	private String bugType;
-	//任务类型
+	@ExcelProperty("任务类型")
 	private String taskType;
-	//任务描述
+	@ExcelProperty("描述")
 	private String taskDes;
-	//任务状态
+	@ExcelProperty("任务状态")
 	private String taskStatus;
-	//上班时间
+	@ExcelProperty("上班时间")
 	private Date startDate;
-	//下班时间
+	@ExcelProperty("下班时间")
 	private Date endDate;
-	//预计工作量
+	@ExcelProperty("工时")
 	private Double workTime;
+	
 	public Integer getTaskSeq() {
 		return taskSeq;
 	}
@@ -81,5 +93,10 @@ public class DailyInfoEntity {
 	public void setWorkTime(Double workTime) {
 		this.workTime = workTime;
 	}
-	
+	public String getTaskSource() {
+		return taskSource;
+	}
+	public void setTaskSource(String taskSource) {
+		this.taskSource = taskSource;
+	}
 }

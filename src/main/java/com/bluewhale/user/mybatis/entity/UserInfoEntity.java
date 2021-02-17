@@ -2,6 +2,9 @@ package com.bluewhale.user.mybatis.entity;
 
 import java.util.Date;
 
+import com.alibaba.excel.annotation.ExcelIgnore;
+import com.alibaba.excel.annotation.ExcelProperty;
+
 /**
  * 员工信息表
  * @author 张晓睿
@@ -9,24 +12,32 @@ import java.util.Date;
  */
 public class UserInfoEntity {
 
+	//主键id
+	@ExcelIgnore
     private String id;
+    @ExcelProperty("员工编号")
     private Integer empNo;
-
+    @ExcelProperty("员工姓名")
     private String empName;
-
+    @ExcelProperty("性别")
     private String sexCode;
-
+    @ExcelProperty("生日")
     private Date birthDate;
+    @ExcelProperty("办公电话")
     private String phone;
+    @ExcelProperty("手机号")
     private String mobile;
-
+    @ExcelProperty("家庭住址")
     private String homeAddress;
+    @ExcelProperty("邮政编码")
     private String postcode;
+    @ExcelProperty("雇佣日期")
     private Date hireDate;
-    private Date regDate;
+    @ExcelProperty("离职日期")
     private Date leaveDate;
+    @ExcelProperty("职位")
     private String postition;
-
+    //是否有效
     private String isValid;
 
     public void setId(String id) {
@@ -67,10 +78,6 @@ public class UserInfoEntity {
 
     public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
-    }
-
-    public void setRegDate(Date regDate) {
-        this.regDate = regDate;
     }
 
     public void setLeaveDate(Date leaveDate) {
@@ -123,10 +130,6 @@ public class UserInfoEntity {
 
     public Date getHireDate() {
         return hireDate;
-    }
-
-    public Date getRegDate() {
-        return regDate;
     }
 
     public Date getLeaveDate() {

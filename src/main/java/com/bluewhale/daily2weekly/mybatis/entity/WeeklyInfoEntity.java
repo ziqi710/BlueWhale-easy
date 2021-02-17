@@ -2,6 +2,8 @@ package com.bluewhale.daily2weekly.mybatis.entity;
 
 import java.util.Date;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+
 /**
  * 周报信息表
  * @author 张晓睿
@@ -9,25 +11,25 @@ import java.util.Date;
  */
 public class WeeklyInfoEntity {
 	
-	//需求号或任务编号
+	@ExcelProperty("需求号或任务编号")
 	private String taskId;
-	//任务类型
+	@ExcelProperty("任务类型")
 	private String taskType;
-	//任务描述
+	@ExcelProperty("任务描述")
 	private String taskDes;
-	//实际开始时间
+	@ExcelProperty("实际开始时间")
 	private Date startDate;
-	//实际结束时间
+	@ExcelProperty("实际结束时间")
 	private Date endDate;
-	//实际工作量
+	@ExcelProperty("实际工作量")
 	private Double workload;
-	//责任人
+	@ExcelProperty("责任人")
 	private String workerName;
-	//备注
+	@ExcelProperty("备注")
 	private String taskNode;
-	//完成比率
+	@ExcelProperty("完成比率")
 	private String completeRatio;
-	//任务拖延原因/客户评价
+	@ExcelProperty("任务拖延原因/客户评价")
 	private String delayReason;
 	
 	public String getTaskId() {

@@ -2,6 +2,8 @@ package com.bluewhale.daily2weekly.mybatis.entity;
 
 import java.util.Date;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+
 /**
  * 下周计划表
  * @author 张晓睿
@@ -9,21 +11,21 @@ import java.util.Date;
  */
 public class NextWeekPlanEntity {
 
-	//需求或任务编号
+	@ExcelProperty("需求或任务编号")
 	private String taskId;
-	//任务类型
+	@ExcelProperty("任务类型")
 	private String taskType;
-	//任务名称
+	@ExcelProperty("任务名称")
 	private String taskDes;
-	//计划开始时间
+	@ExcelProperty("计划开始时间")
 	private Date startDate;
-	//计划结束时间
+	@ExcelProperty("计划结束时间")
 	private Date endDate;
-	//预计工作量
+	@ExcelProperty("预计工作量")
 	private Double workload;
-	//责任人
+	@ExcelProperty("责任人")
 	private String workerName;
-	//备注
+	@ExcelProperty("备注")
 	private String taskNode;
 	
 	public String getTaskId() {
